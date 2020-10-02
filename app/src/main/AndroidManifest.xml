@@ -9,6 +9,9 @@
     <!-- Add support for Chromebooks -->
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
+    <!-- this was the default theme
+    android:theme="@style/AppTheme.Launch"> -->
+
     <application
         android:allowBackup="true"
         android:fullBackupOnly="true"
@@ -19,35 +22,37 @@
         android:supportsRtl="true">
         <activity android:name="at.xtools.pwawrapper.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.Launch">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data
-                    android:host="leasingrechnen.at"
-                    android:pathPrefix="/"
-                    android:scheme="http" />
-                <data
-                    android:host="www.leasingrechnen.at"
-                    android:pathPrefix="/"
-                    android:scheme="http" />
-                <data
-                    android:host="leasingrechnen.at"
-                    android:pathPrefix="/"
-                    android:scheme="https" />
-                <data
-                    android:host="www.leasingrechnen.at"
-                    android:pathPrefix="/"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="landscape"
+            >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data
+                android:host="leasingrechnen.at"
+                android:pathPrefix="/"
+                android:scheme="http" />
+            <data
+                android:host="www.leasingrechnen.at"
+                android:pathPrefix="/"
+                android:scheme="http" />
+            <data
+                android:host="leasingrechnen.at"
+                android:pathPrefix="/"
+                android:scheme="https" />
+            <data
+                android:host="www.leasingrechnen.at"
+                android:pathPrefix="/"
+                android:scheme="https" />
+        </intent-filter>
+    </activity>
 
-        <!--Support super wide screens-->
+    <!--Support super wide screens-->
         <meta-data android:name="android.max_aspect" android:value="2.1" />
     </application>
 </manifest>

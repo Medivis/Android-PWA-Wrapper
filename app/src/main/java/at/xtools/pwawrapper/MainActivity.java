@@ -2,8 +2,11 @@ package at.xtools.pwawrapper;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.WindowManager;
 
 import at.xtools.pwawrapper.ui.UIManager;
 import at.xtools.pwawrapper.webview.WebViewHelper;
@@ -18,6 +21,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // Setup Theme
         setTheme(R.style.AppTheme_NoActionBar);
+
+        // Hide Status Bar
+        if (Build.VERSION.SDK_INT < 16) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
+        else {
+            View decorView = getWindow().getDecorView();
+            // Hide Status Bar.
+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN;
+            decorView.setSystemUiVisibility(uiOptions);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
