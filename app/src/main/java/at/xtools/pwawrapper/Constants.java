@@ -3,8 +3,11 @@ package at.xtools.pwawrapper;
 public class Constants {
     public Constants(){}
     // Root page
-    public static String WEBAPP_URL = "http://192.168.178.142:3000/api/v1/panels/render/8/";
-    public static String WEBAPP_HOST = "http://192.168.178.142:3000/"; // used for checking Intent-URLs
+    //public static String WEBAPP_URL = "http://192.168.178.142:3000/api/v1/panels/render/8/";
+    //public static String WEBAPP_HOST = "http://192.168.178.142:3000/"; // used for checking Intent-URLs
+
+    public static String WEBAPP_URL = "http://192.168.178.142/";
+    public static String WEBAPP_HOST = "http://192.168.178.142/"; // used for checking Intent-URLs
 
 	// User Agent tweaks
     public static boolean POSTFIX_USER_AGENT = true; // set to true to append USER_AGENT_POSTFIX to user agent

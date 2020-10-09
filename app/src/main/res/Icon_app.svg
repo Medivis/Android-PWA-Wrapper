@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <filter id="brand-logo-white-solid" x="137.081" y="31" width="238.03" height="449.96" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.729"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Icon_app">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="Icon_app" clip-path="url(#clip-Icon_app)">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#brand-logo-white-solid)">
+      <path id="brand-logo-white-solid-2" data-name="brand-logo-white-solid" d="M192.627,0H31.4A23.4,23.4,0,0,0,8,23.4V419.96H39.2V341.949H184.825V419.96h31.2V23.4A23.4,23.4,0,0,0,192.627,0Zm-7.8,262.638H39.2V31.2H184.825Z" transform="translate(144.08 46)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

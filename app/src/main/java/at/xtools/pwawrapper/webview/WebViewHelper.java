@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
@@ -38,9 +39,19 @@ public class WebViewHelper {
         this.webSettings = webView.getSettings();
     }
 
+    public static boolean checkWebsite(String URLName) {
+        try {
+            return true;
+        } catch (Exception e) {
+            Log.d("connection", "error");
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     /**
      * Simple helper method checking if connected to Network.
-     * Doesn't check for actual Internet connection!
+     * than check if website is ok
      * @return {boolean} True if connected to Network.
      */
     private boolean isNetworkAvailable() {
@@ -51,7 +62,9 @@ public class WebViewHelper {
         boolean isAvailable = false;
         if (networkInfo != null && networkInfo.isConnected()) {
             // Wifi or Mobile Network is present and connected
-            isAvailable = true;
+            if(checkWebsite(Constants.WEBAPP_URL)){
+                isAvailable = true;
+            }
         }
         return isAvailable;
     }

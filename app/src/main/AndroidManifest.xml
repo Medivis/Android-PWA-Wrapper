@@ -10,7 +10,9 @@
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
     <!-- this was the default theme
-    android:theme="@style/AppTheme.Launch"> -->
+    android:theme="@style/AppTheme.Launch">
+    android:screenOrientation="portrait"
+    -->
 
     <application
         android:allowBackup="true"
@@ -23,7 +25,6 @@
         <activity android:name="at.xtools.pwawrapper.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:screenOrientation="landscape"
             >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -34,20 +35,10 @@
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
             <data
-                android:host="leasingrechnen.at"
-                android:pathPrefix="/"
+                android:host="*.192.168.178.142/"
                 android:scheme="http" />
             <data
-                android:host="www.leasingrechnen.at"
-                android:pathPrefix="/"
-                android:scheme="http" />
-            <data
-                android:host="leasingrechnen.at"
-                android:pathPrefix="/"
-                android:scheme="https" />
-            <data
-                android:host="www.leasingrechnen.at"
-                android:pathPrefix="/"
+                android:host="*.192.168.178.142/"
                 android:scheme="https" />
         </intent-filter>
     </activity>
